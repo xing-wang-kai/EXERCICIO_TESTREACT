@@ -12,6 +12,8 @@ com no total 13 testes todos com status passados.
 
 ![testes](./public/imagens/projeto.png)
 
+![testes](./public/imagens/projetogif.gif)
+
 </div>
 
 <hr>

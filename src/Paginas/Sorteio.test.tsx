@@ -6,7 +6,7 @@ import Sorteio from './Sorteio';
 import { useResultadoSorteio } from '../state/hook/useResultadoSorteio';
 
 jest.mock('../state/hook/useNameList.ts')
-jest.mock('../state/hook/useResultadoSorteio.ts', () => {
+jest.mock('../state/hook/useResultadoSorteio.ts', () => { 
     return {
         useResultadoSorteio: jest.fn()
     }
