@@ -2,22 +2,30 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import Rodape from './Rodape';
-import GetNameList from '../../state/hook/GetNameList';
+import useNameList from '../../state/hook/useNameList';
 import { useNavigate } from 'react-router-dom';
+import { UseSorteador } from '../../Paginas/useSorteador';
 
 const mockNavigate = jest.fn();
+const mockSorteio = jest.fn();
 
-jest.mock("../../state/hook/GetNameList.ts");
+jest.mock("../../state/hook/useNameList.ts");
 jest.mock('react-router-dom', () => {
     return {
         useNavigate: ()=> mockNavigate
     }
 });
 
+jest.mock('../../Paginas/useSorteador', () => {
+    return {
+        UseSorteador: () => mockSorteio
+    }
+});
+
 
 describe("GROUP: --> When there aren't enough participants:", () => {
     beforeEach(()=>{
-            (GetNameList as jest.Mock).mockReturnValue([]);
+            (useNameList as jest.Mock).mockReturnValue([]);
     })
     it("TEST:--> So, The game cannot happen", () => {
         render(<RecoilRoot>
@@ -32,7 +40,7 @@ describe("GROUP: --> When there aren't enough participants:", () => {
 
 describe("GROUP:-->When there are participants:", ()=>{
     beforeEach(()=>{
-        (GetNameList as jest.Mock).mockReturnValue(["Jessica", "Pedro", "Elisabeth"]);
+        (useNameList as jest.Mock).mockReturnValue(["Jessica", "Pedro", "Elisabeth"]);
     })
 
     it("TEST:--> The game can start:", ()=>{
@@ -53,7 +61,8 @@ describe("GROUP:-->When there are participants:", ()=>{
         const button = screen.getByRole('button');
         fireEvent.click(button);
         expect(mockNavigate).toHaveBeenCalled();
-        expect(mockNavigate).toHaveBeenCalledWith("/sorteio")
+        expect(mockNavigate).toHaveBeenCalledWith("/sorteio");
+        expect(mockSorteio).toHaveBeenCalledTimes(1);
 
     })
 })

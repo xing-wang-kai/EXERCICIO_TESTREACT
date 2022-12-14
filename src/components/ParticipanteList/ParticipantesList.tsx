@@ -1,4 +1,4 @@
-import GetNameList from '../../state/hook/GetNameList';
+import GetNameList from '../../state/hook/useNameList';
 
 
 export default function ParticipantesList()

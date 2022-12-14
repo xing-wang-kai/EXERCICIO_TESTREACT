@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-pascal-case */
 import Comp from "./Rodape.styled";
-import GetNameList from '../../state/hook/GetNameList';
+import GetNameList from '../../state/hook/useNameList';
 import { useNavigate } from 'react-router-dom'
+import { UseSorteador } from "../../Paginas/useSorteador";
 
 
 const Rodape = () => {
@@ -9,7 +10,10 @@ const Rodape = () => {
     const participantes = GetNameList();
     const navigate = useNavigate();
 
+    const sorteador = UseSorteador();
+
     const iniciar = () => {
+        sorteador()
         navigate('/sorteio');
     }
     return (

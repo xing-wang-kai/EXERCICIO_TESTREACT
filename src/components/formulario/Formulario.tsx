@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { AddNameList } from '../../state/hook/addNameList';
-import { ReturnErroState } from '../../state/hook/returnErrorState';
+import { useErroState } from '../../state/hook/useErrorState';
 import Comp from './formulario.estyled';
 
 export default function Formulario(){
@@ -19,7 +19,7 @@ export default function Formulario(){
         inputRef.current?.focus();
     }
 
-    const errorMessage = ReturnErroState();
+    const errorMessage = useErroState();
 
     return (
         

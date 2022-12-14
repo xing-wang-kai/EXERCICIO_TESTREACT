@@ -88,7 +88,7 @@ describe("GROUP:--> Testes Comportamento Formulário:", ()=> {
         })
         
         messagemError = screen.queryByRole('alert');
-        //expect(messagemError).toBeNull();
+        expect(messagemError).toBeNull();
 
     })
 })

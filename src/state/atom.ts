@@ -6,6 +6,11 @@ export const nameList = atom<string[]>({
 })
 
 export const erroState = atom<string>({
-    key: '',
+    key: 'erroState',
     default: ''
+})
+
+export const resultNames = atom<Map<string, string>>({
+    key: 'resultNames',
+    default: new Map()
 })

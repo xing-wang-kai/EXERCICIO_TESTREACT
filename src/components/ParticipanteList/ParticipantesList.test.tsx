@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import { RecoilRoot } from 'recoil';
 import ParticipantesList from './ParticipantesList';
-import GetNameList from '../../state/hook/GetNameList';
+import useNameList from '../../state/hook/useNameList';
 
-jest.mock('../../state/hook/GetNameList');
+jest.mock('../../state/hook/useNameList');
 
 describe('GROUP:--> Testes comportamento lista de participantes:', ()=> {
     
     beforeEach(()=> {
-        (GetNameList as jest.Mock).mockReturnValue([]);
+        (useNameList as jest.Mock).mockReturnValue([]);
     })
     it("TEST:--> uma lista vazia de participantes:", () => {
         
@@ -29,7 +29,7 @@ describe('GROUP:--> Testes comportamento lista de participantes:', ()=> {
 describe("GROUP:--> Quando a lista está preenchida:", ()=> {
 
     beforeEach(()=> {
-        (GetNameList as jest.Mock).mockReturnValue(['ana Carolina', 'milena'])
+        (useNameList as jest.Mock).mockReturnValue(['ana Carolina', 'milena'])
     })
     const participantes = ['carolina', 'catarina'];
 
