@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import { HeaderComponent } from './components/cabecalho';
-import Formulario from './components/formulario/Formulario';
-import { Global } from './components/formulario/global';
-import ParticipantesList from './components/formulario/ParticipantesList';
+import { Global } from './components/global';
+import Configure from './Paginas/Configure';
+import Sorteio from './Paginas/Sorteio';
 
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
         <Global/>
         <HeaderComponent/>
         <Routes>
-          <Route path='/' element={<Formulario/>}/>
+          <Route path='/'        element={<Configure/>} />
+          <Route path='/sorteio' element={<Sorteio/>}   />
         </Routes>
-        <ParticipantesList/>
       </RecoilRoot>
     </Router>
     

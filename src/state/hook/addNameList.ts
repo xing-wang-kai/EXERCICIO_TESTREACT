@@ -15,7 +15,7 @@ export const AddNameList = () => {
             setTimeout( () => {setError('')}, 3000);
             setTimeout(() => {
                 setError("")
-            }, 5000)
+            }, 500)
             return            
         }
         return event( ( item ) => [...item, name])

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GROUP:--> The Configure Page: TEST:--> needs to be rendered correctly: 1`] = `
+<div>
+  <div
+    class="sc-ftTHYK jMnoeW"
+  >
+    <section>
+      <h2>
+        Let's to play!
+      </h2>
+      <form>
+        <div
+          class="sc-bcXHqe jXSIqJ"
+        >
+          <label
+            for="nome"
+          />
+          <input
+            class="sc-gswNZR bFSTTR nome"
+            id="nome"
+            placeholder="Insira o nome dos participantes"
+            required=""
+            type="text"
+            value=""
+          />
+          <button
+            class="sc-dkrFOg jiHJa-d"
+            disabled=""
+          >
+            Adicionar! 
+          </button>
+        </div>
+        
+      </form>
+      <div>
+        <h3>
+          NOMES NA LISTA DE PARTICIPANTES: 
+        </h3>
+        <ul />
+      </div>
+      <div>
+        <footer
+          class="sc-eDvSVe gldbwB"
+        >
+          <button
+            class="sc-jSUZER EQdME"
+            disabled=""
+          >
+             Começar a Brincadeira
+          </button>
+          <img
+            alt="Sacolas de compras"
+            src="/imagens/sacolas.png"
+          />
+        </footer>
+        <br />
+        <hr />
+        <h4
+          class="sc-iBYQkv cQYBaA"
+        >
+          Feito com s2 por Kai wang
+        </h4>
+      </div>
+    </section>
+  </div>
+</div>
+`;

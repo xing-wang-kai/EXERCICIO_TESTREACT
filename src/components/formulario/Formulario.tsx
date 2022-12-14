@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-pascal-case */
 
 import { useState, useRef } from 'react';
 import { AddNameList } from '../../state/hook/addNameList';
 import { ReturnErroState } from '../../state/hook/returnErrorState';
+import Comp from './formulario.estyled';
 
 export default function Formulario(){
 
@@ -19,21 +21,24 @@ export default function Formulario(){
 
     const errorMessage = ReturnErroState();
 
-
     return (
-        <form onSubmit={ addName }>
-            <label htmlFor="nome"></label>
-            <input
-                ref={inputRef}
-                value={nome}
-                onChange={ evt => setNome(evt.target.value)}
-                className="nome" id='nome'
-                type="text" placeholder='Insira o nome dos participantes' 
-                required
-                
-                />
-            <button disabled={!nome}>Adicionar! </button>
-            {errorMessage && <p role="alert">{errorMessage}</p>}
-        </form>
+        
+            <form onSubmit={ addName }>
+                <Comp.div>
+                    <label htmlFor="nome"></label>
+                    <Comp.input
+                        ref={inputRef}
+                        value={nome}
+                        onChange={ evt => setNome(evt.target.value.toUpperCase())}
+                        className="nome" id='nome'
+                        type="text" placeholder='Insira o nome dos participantes' 
+                        required
+                        
+                        />
+                    <Comp.button disabled={!nome}>Adicionar! </Comp.button>
+                </Comp.div>
+                {errorMessage && <Comp.p role="alert">{errorMessage}</Comp.p>}
+            </form>
+        
     );
 }
